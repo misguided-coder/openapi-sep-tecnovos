@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: Simple Math Calculator
+  description: "A simple calculator providing only one facility for summing 2 integer\
+    \ numbers with one path only, get results."
+  version: 2.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/trainingorg/CalculatorAPI/2.0.0
+  description: SwaggerHub API Auto Mocking
+- url: http://localhost:8080/api/v1
+tags:
+- name: Calculator
+- name: New Tag 2
+paths:
+  /cal/add:
+    get:
+      tags:
+      - Calculator
+      summary: Add two numbers
+      description: Adding two integer numbers
+      operationId: addNumbers
+      parameters:
+      - name: valOne
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 2
+          default: 2
+      - name: valTwo
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 2
+          default: 2
+      responses:
+        "200":
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 2+2 is 4
+  /cal/devide:
+    get:
+      tags:
+      - Calculator
+      summary: Devide a number.
+      description: Deviding one number from another number.
+      operationId: devideNumber
+      parameters:
+      - name: valOne
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 2
+          default: 2
+      - name: valTwo
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 2
+          default: 2
+      responses:
+        "200":
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 4/2 is 2
+  /cal/subtract:
+    get:
+      tags:
+      - Calculator
+      summary: Substract two numbers
+      description: Substract two integer numbers
+      operationId: subtractNumbers
+      parameters:
+      - name: valOne
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 20
+          default: 20
+      - name: valTwo
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          example: 10
+          default: 10
+      responses:
+        "200":
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 20-10 is 10
+components: {}
