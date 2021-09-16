@@ -120,4 +120,30 @@ paths:
               schema:
                 type: string
                 example: 20-10 is 10
+  /cal/{val}/double:
+    get:
+      tags:
+      - Calculator
+      summary: Double the number
+      description: Double the given number
+      operationId: dounbleNumber
+      parameters:
+      - name: val
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+          example: 20
+          default: 20
+      responses:
+        "200":
+          description: Success Response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 20 two times is 40
 components: {}
